@@ -1,0 +1,57 @@
+<% provide :title, t(".title") %>
+<% provide :button_text, t(".button_text") %>
+
+<section class="login-block">
+<div class="container container1">
+  <div class="row">
+      <div class="col-md-4 login-sec">
+          <h2 class="text-center">Register Now</h2>
+          <%= form_for(@user, :html => {:class => "login-form"}) do |f| %>
+            <%= render "shared/error_messages", object: f.object %>
+            <div class="form-group">
+              <%= f.label :name, t(".name"), for:"exampleInputName", class:"text-uppercase" %>
+              <%= f.text_field :name, class: "form-control" %>
+            </div>
+            
+            <div class="form-group">
+              <%= f.label :email, t(".email"), for:"exampleInputEmail1", class:"text-uppercase" %>
+              <%= f.email_field :email, class: "form-control" %>
+            </div>
+            
+            <div class="form-group">
+              <%= f.label :address, t(".address"), for:"exampleInputAddress", class:"text-uppercase" %>
+              <%= f.text_field :address, class: "form-control" %>
+            </div>
+            
+            <div class="form-group">
+              <%= f.label :password, t(".password"),for:"exampleInputPassword", class:"text-uppercase" %>
+              <%= f.password_field :password, class: "form-control" %>
+            
+            </div>
+
+            <div class="form-group">
+            <%= f.label :password_confirmation, t(".confirm") %>
+            <%= f.password_field :password_confirmation, class: "form-control" %>
+            </div>
+            
+            <div class="btn-login">
+              <%= f.submit yield(:button_text), id: "login", class: "btn btn-login text-uppercase" %>
+            </div>
+          <% end %>
+  <div class="copy-text">Have an account?&nbsp;<%= link_to "Login now", login_path, style: "color: cadetblue;" %></div>
+</div>
+<div class="col-md-8 banner-sec">
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <img class="d-block img-fluid" src="https://lamtrip.com/uploads/medium_thumbs/Delicious-Food.jpg" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="banner-text">
+            <h2>ROOFTOP</h2>
+            <p>Đăng nhập hoặc đăng ký ngay để nhận được nhiều ưu đãi!</p>
+          </div>  
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</section>

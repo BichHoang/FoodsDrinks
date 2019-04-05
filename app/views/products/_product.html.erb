@@ -1,0 +1,31 @@
+<div class="col-12 col-md-6 col-lg-4">
+  <div class="product-grid3">
+      <div class="product-image3">
+          <%= link_to image_tag(product.images), product,class: "pic-1", alt: t("products.alt_text") %>
+          <%= link_to image_tag(product.images), product,class: "pic-2", alt: t("products.alt_text") %>
+          <ul class="social">
+            <li>
+              <%= button_to "Add to cart", carts_path(product_id: product.id), remote: true, class:"btn btn-outline-warning"%>
+            </li>
+          </ul>
+          <span class="product-new-label">New</span>
+      </div>
+      <div class="product-content">
+          <h3 class="title"><b><%= link_to product.name, product, class: "product-name" %></b></h3>
+          <div class="row">
+              <div class="col-lg-5 price">
+                <%= number_to_currency product.price %>
+                <span><%= number_to_currency (product.price + 0.2*product.price)%></span>
+            </div>
+            <div class="col-lg-5 rating" style="display = block">             
+                <% product.avg_rate.to_i.times do %>
+                  <span class="fas fa-star checked" style="font-size: 14px"></span>
+                <% end %>
+                <% (Settings.max_point - (product.avg_rate.to_i)).times do %>
+                  <span class="fas fa-star disabled" style="font-size: 14px"></span>
+                <% end %>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>

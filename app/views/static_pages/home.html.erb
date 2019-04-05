@@ -1,0 +1,91 @@
+<% provide :title, t(".title") %>
+<div class="container">
+    <div class="row" style="padding-top: 20px;">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+        <%= form_tag products_path, method: :get, class: "navbar-form navbar-search", role: :search do %>
+            <div class="input-group">
+                <%= text_field_tag :search_by_name, "", class: "form-control", style:"padding: 25px"%>
+                <div class="input-group-btn">
+                    <%= submit_tag t("search"),id: "btnSearch", class: "btn btn-search btn-default" %>
+                </div>
+            </div>
+        <% end %>
+        </div>
+    </div>
+</div>
+<div class="sliderwrapper">
+    <div id="slider" class="container">
+        <div class="slider">
+            <ul class="slides">
+                <li class="slide">
+                    <h5 class="wow fadeInDown" data-wow-delay="0.8s">Tìm kiếm dễ dàng ! </h5>
+                    <p class="wow fadeInUp" data-wow-delay="0.8s">
+                        Với RoofTop, bạn có thể dễ dàng tìm kiếm những món ăn, đồ uống ngon, chất lượng theo từng miền
+                    </p>
+                    <img src="images/slideimg.png" width="317" height="256" class="wow fadeInRight" data-wow-delay="0.8s" alt="slide1img">
+                </li>
+                <li class="slide">
+                    <h5 class="wow fadeInDown" data-wow-delay="0.8s">Tiện lợi, mọi lúc mọi nơi ! </h5>
+                    <p class="wow fadeInUp" data-wow-delay="0.8s">Với RoofTop, bạn có thể đặt các món ăn một cách nhanh chóng hơn, trực quan hơn. Ngoài ra còn giúp cho người quản lý cửa hàng có thể quản lý một cách tối ưu, theo dõi cửa hàng bất cứ lúc nào, bất cứ ở đâu.</p>
+                    <img src="images/slideimg.png" width="317" height="256" class="wow fadeInRight" data-wow-delay="0.8s" alt="slideimg2">
+                </li>
+                <li class="slide">
+                    <h5 class="wow fadeInDown" data-wow-delay="0.8s">Đặt hàng thuận tiện, nhanh chóng !</h5>
+                    <p class="wow fadeInUp" data-wow-delay="0.8s">
+                        Bạn có thể đặt cho mình các sản phẩm một cách dễ dàng, luôn nhận được thông báo mỗi khi đơn hàng có sự thay đổi                    </p>
+                    <img src="images/slideimg.png" width="317" height="256" class="wow fadeInRight" data-wow-delay="0.8s" alt="slideimg2">
+                </li>
+            </ul>
+        </div>
+    </div>
+  <!-- End of Slider-->
+</div>
+    <!-- end of sliderwrapper-->
+<!--============ Best Foods ============-->
+
+<div class="bestdisheswrapper">
+  <div id="bestdishes" class="container">
+      <h2 class="wow fadeInUp" data-wow-delay="0.3s">BEST FOODS</h2>
+      <div class="slider">
+          <ul class="slides">
+                <% for i in 0..(@hot_foods.length-3) do %>
+                <li class="slide">
+                    <%= render partial: "hot_food", locals: { hot_food: @hot_foods[i] } %>
+                    <%= render partial: "hot_food", locals: { hot_food: @hot_foods[i+1] } %>
+                    <%= render partial: "hot_food", locals: { hot_food: @hot_foods[i+2] } %>
+                 </li>
+              <% end %>
+          </ul>
+      </div>
+      <!-- end of slider-->
+  </div>
+  <!-- end of besth foods-->
+</div>
+    <!-- end of bestdishes wrapper-->
+
+    <!--============ Best Drinks ============-->
+
+<div class="bestdisheswrapper">
+  <div id="bestdishes" class="container">
+      <h2 class="wow fadeInUp" data-wow-delay="0.3s">BEST DRINKS</h2>
+      <div class="slider">
+          <ul class="slides">
+                <% for i in 0..(@hot_drinks.length-3) do %>
+                <li class="slide">
+                    <%= render partial: "hot_drink", locals: { hot_drink: @hot_drinks[i] } %>
+                    <%= render partial: "hot_drink", locals: { hot_drink: @hot_drinks[i+1] } %>
+                    <%= render partial: "hot_drink", locals: { hot_drink: @hot_drinks[i+2] } %>
+                 </li>
+              <% end %>
+          </ul>
+      </div>
+      <!-- end of slider-->
+  </div>
+  <!-- end of besth foods-->
+</div>
+    <!-- end of bestdishes wrapper-->
+    <!--============ Contact us ============-->
+
+<div class="contactwrapper"></div>
+<!-- end of contact wrapper-->

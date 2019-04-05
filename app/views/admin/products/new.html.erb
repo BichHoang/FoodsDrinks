@@ -1,0 +1,38 @@
+<% provide :title, "New Product" %>
+<div class="container">
+  <h1 class="text-center" style="margin: 10px">New Product</h1>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 col-md-offset-3">
+      <%= form_for @product, url: admin_products_path do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+
+        <%= f.hidden_field :suggestion_id, value: params[:suggestion_id] %>
+
+        <%= f.label :name, "Product Name" %>
+        <%= f.text_field :name, class: "form-control" %>
+
+        <%= f.label :description, "Description" %>
+        <%= f.text_field :description, class: "form-control" %>
+
+        <%= f.label :images, "Image URL" %>
+        <%= f.text_field :images, class: "form-control" %>
+
+        <%= f.label :price, "Price" %>
+        <%= f.number_field :price, class: "form-control" %>
+
+        <%= f.label :inventory, "Quantity" %>
+        <%= f.number_field :inventory, class: "form-control" %>
+
+        <%= f.label :product_type, "Product Type" %>
+        <%= f.select :product_type, choose_product_type %>
+
+        <%= f.label :category_id, "Category" %>
+        <%= f.select :category_id, choose_category_id,
+          {}, {size: Settings.category.list_size}%>
+
+        <%= f.submit "Create Product", class: "btn btn-success", style: "width: -webkit-fill-available;margin-top: 20px;"%>
+      <% end %>
+    </div>
+  </div>
+</div>

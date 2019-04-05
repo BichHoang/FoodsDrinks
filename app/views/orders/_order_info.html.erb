@@ -1,0 +1,35 @@
+<h4>
+  <%= t ".created" %>
+  <strong><%= l @order.created_at, format: :long %></strong>
+</h4>
+<div class="row">
+  <div class="col-8">
+    <%= t ".status" %>
+    <strong><%= @order.status %></strong>
+  </div>
+  <div class="col-2">
+    <% if can_edit? %>
+      <%= link_to admin_order_path(@order, status: 1),
+        "data-original-title": "Accept",
+        "data-toggle": "tooltip", "type": "button",
+        class: "btn btn-sm btn-success",style:"width: -webkit-fill-available;", method: :patch, remote: true do %>
+        <i class="fas fa-ok">Accept</i>
+      <% end %>
+  </div>
+  <div class="col-2">
+     <%= link_to admin_order_path(@order, status: 2),
+        "data-original-title": t(".reject"),
+        "data-toggle": "tooltip", "type": "button",
+        class: "btn btn-sm btn-danger",style:"width: -webkit-fill-available;", method: :patch, remote: true do %>
+        <i class="fas fa-sremove">Reject</i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<h4>
+  <%= t ".updated" %>
+  <strong><%= l @order.updated_at, format: :long %></strong>
+</h4>
+
+    
+     

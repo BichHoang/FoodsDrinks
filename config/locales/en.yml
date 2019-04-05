@@ -1,0 +1,350 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+  base_title: "ROOFTOP SERVICE"
+  toggle_navigation: "Toggle navigation"
+  logo_link: "Foods & Drinks"
+  home_link: "Home"
+  help_link: "Help"
+  login_link: "Login"
+  about_link: "About"
+  contact_link: "Contact"
+  fb_link1: "Song Tran Van"
+  fb_link2: "Trong Be Ngoc"
+  information: "Copyrighted © by "
+  account_text: "Account"
+  admin_text: "Administrator"
+  manage_users: "Manage Users"
+  new_product: "New Product"
+  manage_categories: "Manage Categories"
+  manage_suggestions: "Manage Suggestions"
+  manage_orders: "Manage Orders"
+  profile_link: "Profile"
+  setting_link: "Setting"
+  logout_link: "Log out"
+  suggest_link: "Suggest Product"
+  login: "Please login!"
+  login_admin: "Please login as adminstrator!"
+  you_sure: "Are you sure?"
+  edit: "Edit"
+  delete: "Delete"
+  add_to_cart: "Add to cart"
+  edit: "Edit"
+  search: "Search"
+  category_header: "Categories"
+  description_lb: "Descripton"
+  static_pages:
+    home:
+      title: "Home"
+      header1: "Rooftop Foods and Drinks"
+      header2: "Fresh Taste at a Great Price"
+      signup_link: "Sign up now!"
+    help:
+      title: "Help"
+      header1: "Help Page"
+    contact:
+      title: "Contact"
+      header1: "Contact Page"
+    about:
+      title: "About"
+      header1: "About Page"
+  users:
+    activate_email: "Please check your email to activate your account!"
+    user_not_found: "User not found!"
+    user_update_success: "User profile has been updated!"
+    index:
+      new: "New User"
+      id: "ID"
+      name: "Name"
+      email: "Email"
+    form:
+      name: "Name"
+      email: "Email"
+      address: "Address"
+      password: "Password"
+      confirm: "Confirmation"
+    new:
+      title: "Sign Up"
+      hello: "Sign up"
+      button_text: "Create my account"
+    create:
+      success: "Welcome to the Sample App!"
+    show:
+      name_lb: "Name"
+      email_lb: "Email"
+      address_lb: "Address"
+      user_picture: "User Picture"
+      edit_user_txt: "Edit user"
+      delete_user_txt: "Delete user"
+      alert:
+        error: "Can not load script"
+    edit:
+      title: "Edit User"
+      header: "Update your profile"
+      button_text: "Update"
+    index:
+      title: "All Users"
+      header: "All Users"
+  shared:
+    error_messages:
+      message: "The form contains"
+      error: "error"
+  admin:
+    products:
+      name: "Product name"
+      description: "Descripton"
+      price: "Price"
+      quantity: "Quantity"
+      type: "Product type"
+      category: "Category"
+      image: "Add images"
+      title: "New Product"
+      header: "New Product"
+      create_product: "Create product"
+      new:
+        header: "New Product"
+        description_lb: "Descripton"
+      create:
+        success: "Product has been created!"
+      destroy:
+        success: "Product has been destroyed"
+        warning: "Failed to destroy this product"
+      edit:
+        delete: "Delete product"
+        submit: "Update product"
+        info: "Product Infos"
+        image: "Product images"
+        add_image: "Add images"
+        add_submit: "Add"
+      update:
+        success: "Product has been updated!"
+    users:
+      destroy:
+        success: "User has been destroyed"
+        warning: "Failed to destroy this user"
+  products:
+    rating: "Rating: %{point}"
+    alt-text: Product Image"
+    product_not_found: "Product not found!"
+    index:
+      title: "Home"
+      header: "Our Products"
+      signup_link: "Sign up now!"
+      product_id_text: "Product ID"
+      product_name_text: "Product Name"
+      product_unit_price_text: "Unit Price"
+      add_to_cart_button: "Add to cart"
+      filter: "Filter"
+      food: "Food"
+      drink: "Drink"
+      name: "Name"
+      created: "Created"
+      price: "Price"
+      all: "All"
+    show:
+      inventory_text: "inventory: "
+      price_text: "current price: "
+      quantity_text: "quantity: "
+      edit_link: "Edit"
+      user_name_text: "User name"
+      point_text: "Point"
+      comment_text: "Comment"
+      your_comment_text: "Your comment"
+      your_comment_holder: "Your comment ..."
+      comment: "Comment"
+      all_reviews_text: "All Reviews"
+  product_price: "$%{price}"
+  sessions:
+    new:
+      title: "Log in"
+      email: "Email"
+      password: "Password"
+      login: "Log in"
+      signup: "Sign up now!"
+      new_user: "New user?"
+      remember: "Remember me"
+      remember_title: "Remember me on this computer"
+      forgot_password: "Forgot your password?"
+    create:
+      danger: "Invalid email/password combination"
+      error_msg: "Account not activated. "
+      warning_msg: "Please check your email for the activation link!"
+  user_mailer:
+    account_activation:
+      subject: "Account activation"
+      header: "Rooftop Foods & Drinks"
+      content1: "Hi %{user_name}"
+      content2: "Thanks for your signed up! Click on the link below to activate your account:"
+      link: "Activate"
+    password_reset:
+      subject: "Password reset"
+      header: "Password reset"
+      content1: "To reset your password click the link below:"
+      content2: "This link will expire in two hours."
+      content3: "If you did not request your password to be reset, please ignore this email and your password will stay as it is."
+      link: "Reset password"
+  account_activations:
+    edit:
+      active_success: "Your account has been activated!"
+      active_fails: "Invalid activation link!"
+  password_resets:
+    sent_email_msg: "Email sent with password reset instructions"
+    error_msg: "Email address not found!"
+    expired_password_msg: "Password reset has expired."
+    not_found_user_msg: "User not found!"
+    new:
+      title: "Forgot password"
+      header: "Forgot password"
+      email_lb: "Email"
+      submit: "Submit"
+    edit:
+      title: "Reset Password"
+      header: "Reset Password"
+      email_lb: "Email"
+      password_lb: "New Password"
+      confirm_lb: "Confirmation"
+      submit: "Update password"
+    update:
+      empty_msg: "can't be empty"
+      success_msg: "Password has been reset."
+  order_products:
+    add_product_success: "Product added to your cart!"
+    add_product_fail: "Can not add product!"
+  orders:
+    not_found_order_msg: "Order not found!"
+    index:
+      title: "All Carts"
+      header: "All Carts"
+      user_name_text: "Customer"
+      user_email_text: "Email"
+      user_address_text: "Address"
+      details_link: "Details"
+    show:
+      title: "Your Cart"
+      header: "Your Cart"
+      product_id_text: "Product ID"
+      product_name_text: "Product Name"
+      product_unit_price_text: "Unit Price"
+      product_quantity_text: "Quantity"
+  carts:
+    product_not_found: "Product not found!"
+    empty_cart: "There are no product in your cart!"
+    not_enough_product: "Not enough products in inventory!"
+    update_button: "Update"
+    remove_button: "Remove"
+    index:
+      title: "Your Cart"
+      header: "Your Cart"
+      product_name_text: "Product Name"
+      unit_price_text: "Unit Price"
+      quantity_text: "Quantity"
+      total_text: "Total"
+      continue_shopping_txt: "Continue Shopping"
+      checkout_txt: "Checkout"
+    update:
+      update_success: "Updated quantity!"
+      update_fail: "Can not update!"
+    destroy:
+      destroy_success: "Deleted product!"
+      destroy_fail: "Can not delete!"
+  images:
+    create:
+      fail: "Failed uploading images"
+    destroy:
+      fail: "Failed deleting image"
+  number:
+    currency:
+      format:
+        unit: "$"
+  categories:
+    name: "%{name}"
+    parent_id: "Parent ID: %{parent}"
+    create_success: "Category created!"
+    not_found_category: "Category not found!"
+    update_success: "Category updated!"
+    destroy_success: "Category deleted!"
+    destroy_fails: "Can not delete because category has products!"
+    edit_link: "Edit"
+    delete_link: "Delete"
+    orthers_link: "Others Categories"
+    name_lb: "Category Name"
+    parent_lb: "Parent ID"
+    products_lb: "Products"
+    new_category_link: "New Category"
+    product_name_lb: "Product Name"
+    unit_price_lb: "Unit Price"
+    inventory_lb: "Inventory"
+    index:
+      title: "All Categories"
+      header: "All Categories"
+    new:
+      title: "Category"
+      button_text: "Submit"
+      hello: "New category"
+      name: "Category name"
+      parent: "Parent Category"
+  suggestions:
+    create_success: "Yours suggestion has been sent. Thank you!"
+    reject_success: "Suggestion has been rejected!"
+    destroy_success: "Suggestion has been deleted!"
+    destroy_fails: "Need Accept or Reject before delete!"
+    not_found_suggestion: "Suggestion not found!"
+    details_link: "Details"
+    delete_link: "Delete"
+    product_name_lb: "Product Name"
+    description_lb: "Descripton"
+    price_lb: "Price"
+    product_type_lb: "Product Type (Food or Drink?)"
+    show:
+      description_lb: "Descripton: "
+      proposed_price_lb: "Proposed Price: "
+      status_lb: "Status: "
+      accept_button: "Accept"
+      reject_button: "Reject"
+    new:
+      title: "Suggest Product"
+      header: "Your Suggestion"
+      button_text: "Send"
+    index:
+      user_name_text: "User Name"
+      product_name_text: "Product Name"
+      status_text: "Status"
+  rates:
+    your_rate_text: "Your Rating: "
+    product_not_found: "Error! Product not exist or has been deleted!"
+  admin:
+    suggestions:
+      index:
+        title: "Your suggestions"
+        header: "Your suggestions"
+

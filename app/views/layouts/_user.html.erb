@@ -1,0 +1,32 @@
+<li class="nav-item dropdown">
+  <%= link_to "#", "data-toggle": "dropdown",id: "navbardrop", class: "nav-link dropdown-toggle" do %>
+    <%= current_user.name %><b class="caret"></b>
+  <% end %>
+  <ul class="dropdown-menu">
+    <li class="dropdown-item">
+      <%= link_to current_user do %>
+        <i class="fas fa-user"></i>
+        <%= t "profile_link" %>
+      <% end %>
+    </li>
+    <li class="dropdown-item">
+      <%= link_to edit_user_path(current_user) do %>
+        <i class="fas fa-cog"></i>
+        <%= t "setting_link" %>
+      <% end %>
+    </li>
+    <li class="dropdown-item">
+      <%= link_to new_suggestion_path do %>
+        <i class="fas fa-plus"></i>
+        <%= t "suggest_link" %>
+      <% end %>
+    </li>
+    <li class="dropdown-item">
+      <%= link_to logout_path, method: :delete do %>
+        <i class="fas fa-sign-out-alt"></i>
+          <%= t "logout_link" %>
+        <% end %>
+    </li>
+  </ul>
+</li>
+

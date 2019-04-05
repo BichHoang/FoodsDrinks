@@ -1,0 +1,29 @@
+<%= provide :title, @category.name %>
+<div class="text-center" style="margin-top: 20px;">
+  <h3 class="category-name-text"><%= @category.name %></h3>
+  <h3 class="parent-id-text"><%= t("categories.parent_id", parent: @category.parent_id) %></h3>
+</div>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "categories.product_name_lb" %></th>
+        <th><%= t "categories.unit_price_lb" %></th>
+        <th><%= t "categories.inventory_lb" %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "product", collection: @category.products %>
+      <tr>
+        <td>
+          <%= link_to t("categories.orthers_link"), admin_categories_path,
+            class: "btn btn-info" %>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

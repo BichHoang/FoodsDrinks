@@ -1,0 +1,60 @@
+class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+  include SessionsHelper
+
+  before_action :load_category
+
+  def logged_in_user
+    return if logged_in?
+    flash[:danger] = t "login"
+    redirect_to login_path
+  end
+
+  def login_as_admin
+    return if current_user.admin?
+    flash[:danger] = t "login_admin"
+    redirect_to root_path
+  end
+
+  def product_params
+    params.require(:product).permit :name, :description, :price, :inventory,
+      :product_type, :category_id, :images
+  end
+
+  def load_product
+    @product = Product.find_by id: params[:id]
+    return if @product && @product.exist?
+    flash[:danger] = t "products.product_not_found"
+    redirect_to root_path
+  end
+
+  def load_user
+    @user = User.load_user.find_by id: params[:id]
+    return if @user
+    flash[:danger] = t "users.user_not_found"
+    redirect_to root_path
+  end
+
+  def load_category
+    @categories = Category.basic_category
+  end
+
+  def suggestion_params
+    params.require(:suggestion).permit :product_name, :description, :price,
+      :product_type
+  end
+
+  def load_suggestion
+    @suggestion = Suggestion.find_by id: params[:id]
+    return if @suggestion
+    flash[:danger] = t "suggestions.not_found_suggestion"
+    redirect_to root_path
+  end
+
+  def load_order
+    @order = Order.find_by id: params[:id]
+    return if @order
+    flash[:warning] = t "orders.not_found_order_msg"
+    redirect_to root_path
+  end
+end

@@ -1,0 +1,9 @@
+<tr>
+  <td><%= user.id %></td>
+  <td><%= link_to user.name, user %></td>
+  <td><%= user.email %></td>
+  <td>
+    <%= link_to t("edit"), edit_user_path(user), class: "btn btn-success", style: "padding-right: 20px; padding-left: 20px;"  if current_user? user %>
+    <%= link_to t("delete"), admin_user_path(user),class: "btn btn-danger", method: :delete, data: {confirm: t("you_sure")} if can_delete? user %>
+  </td>
+</tr>

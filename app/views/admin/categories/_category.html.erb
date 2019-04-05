@@ -1,0 +1,14 @@
+<tr>
+  <td><%= link_to category.name, admin_category_path(category) %></td>
+  <td><%= category.parent_id %></td>
+  <td><%= category.products.size %></td>
+  <td></td>
+  <td>
+    <div class="pull-right">
+      <%= link_to t("categories.edit_link"), edit_admin_category_path(category),
+        class: "btn btn-warning" %>
+      <%= link_to t("categories.delete_link"), admin_category_path(category), method: :delete,
+        data: {confirm: t("you_sure")}, class: "btn btn-danger" %>
+    </div>
+  </td>
+</tr>

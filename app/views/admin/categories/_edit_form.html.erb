@@ -1,0 +1,10 @@
+<%= form_for @category, url: admin_category_path(@category) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :name, t("categories.new.name") %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.label :parent_id, t("categories.new.parent") %>
+  <%= f.select :parent_id,
+    options_for_select(@categories.collect{|u| [u.name, u.id]}),
+    {}, {size: Settings.category.list_size} %>
+  <%= f.submit yield(:button_text), class: "btn btn-success" %>
+<% end %>

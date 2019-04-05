@@ -1,0 +1,20 @@
+<%= provide :title, t(".title") %>
+<div class="container" style="padding-bottom :237px">
+  <h1 class="text-center" style="margin: 20px;"><%= t ".header" %></h1>
+  <div class="well">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><%= t ".id" %></th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".email" %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @users %>
+      </tbody>
+    </table>
+    <%= will_paginate @users %>
+  </div>
+</div>

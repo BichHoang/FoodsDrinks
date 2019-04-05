@@ -1,0 +1,44 @@
+<% provide :title, @product.name %>
+<div class="container">
+  <h1>
+    <% if can_delete? @user %>
+      <%= link_to t(".delete"), admin_product_path(@product), method: :delete, data: {confirm: t("you_sure")} %>
+    <% end %>
+  </h1>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= t ".info" %></h3>
+        </div>
+        <div class="panel-body">
+          <%= form_for @product, url: admin_product_path do |f| %>
+            <%= render "shared/error_messages", object: f.object %>
+
+            <%= f.label :name, t("admin.products.name_lb") %>
+            <%= f.text_field :name, class: "form-control" %>
+
+            <%= f.label :description, t("admin.products.description_lb") %>
+            <%= f.text_field :description, class: "form-control" %>
+
+            <%= f.label :images, t("admin.products.description_lb") %>
+            <%= f.text_field :images, class: "form-control" %>
+
+            <%= f.label :price, t("admin.products.price_lb") %>
+            <%= f.number_field :price, class: "form-control" %>
+
+            <%= f.label :inventory, t("admin.products.quantity_lb") %>
+            <%= f.number_field :inventory, class: "form-control" %>
+
+            <%= f.label :product_type, t("admin.products.type_lb") %>
+            <%= f.text_field :product_type, class: "form-control" %>
+
+            <%= f.label :category_id, t("admin.products.category_lb") %>
+            <%= f.number_field :category_id, class: "form-control" %>
+
+            <%= f.submit t(".submit"), class: "btn btn-success" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>

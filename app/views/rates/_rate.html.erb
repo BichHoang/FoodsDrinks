@@ -1,0 +1,9 @@
+<p class="rate-date"><%= rate.created_at.to_date %>&emsp;&emsp;
+  <strong class="rate-user"><%= rate.user.name %></strong>
+  <% rate.point.to_i.times do %>
+    <i class="fas fa-star checked"></i>
+  <% end %>
+</p>
+<p class="comment-size">
+  <%= rate.comment %>
+</p>

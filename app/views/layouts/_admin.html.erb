@@ -1,0 +1,57 @@
+<li class="nav-item dropdown">
+  <%= link_to "#", "data-toggle": "dropdown",id: "navbardrop", class: "nav-link dropdown-toggle" do %>
+    <%= current_user.name%>(Admin)<b class="caret"></b>
+  <% end %>
+  <ul class="dropdown-menu">
+    <li class="dropdown-item">
+      <%= link_to current_user do %>
+        <i class="fas fa-user"></i>
+        <%= t "profile_link" %>
+      <% end %>
+    </li>
+    <li class="dropdown-item">
+      <%= link_to edit_user_path(current_user) do %>
+        <i class="fas fa-cog"></i>
+        <%= t "setting_link" %>
+      <% end %>
+    </li>
+    <li class="dropdown-divider"></li>
+    <li class="dropdown-item">
+      <%= link_to users_path do %>
+        <i class="fas fa-user"></i>
+        <%= t "manage_users" %>
+      <% end %>
+    </li>
+    <li class="dropdown-item">
+      <%= link_to orders_path do %>
+        <i class="fas fa-list"></i>
+        <%= t "manage_orders" %>
+      <% end %>
+    </li>
+    <li class="dropdown-item">
+      <%= link_to new_admin_product_path do %>
+        <i class="fas fa-plus"></i>
+        <%= t "new_product" %>
+      <% end %>
+    </li>
+    <li class="dropdown-item">
+      <%= link_to admin_categories_path do %>
+        <i class="fas fa-list"></i>
+        <%= t "manage_categories" %>
+      <% end %>
+    </li>
+    <li class="dropdown-item">
+      <%= link_to admin_suggestions_path do %>
+        <i class="fas fa-list"></i>
+        <%= t "manage_suggestions" %>
+      <% end %>
+    </li>
+    <li class="dropdown-divider"></li>
+    <li class="dropdown-item">
+      <%= link_to logout_path, method: :delete do %>
+        <i class="fas fa-sign-out-alt"></i>
+          <%= t "logout_link" %>
+        <% end %>
+    </li>
+  </ul>
+</li>

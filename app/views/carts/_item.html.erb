@@ -1,0 +1,32 @@
+<tr>
+  <td class="">
+    <div class="media">
+      <a class="thumbnail pull-left" href="#">
+        <%= link_to image_tag(item.images, :size => "50x50"),product_path(item), class: "media-object  img-circle", style:"max-height: 50px;max-width: 50px;margin-right: 20px;" %>
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= link_to item.name, product_path(item), class: "product-name" %>
+        </h4>
+      </div>
+    </div>
+  </td>
+  <td class="text-center">
+  <%= form_tag cart_path(item, product_id: item.id), method: :patch do %>
+    <%= number_field_tag :quantity, item.quantity_in_cart,
+      min: Settings.minimum_value, class: "form-control" %>
+  </td>
+  <td class="text-center"><strong><%= number_to_currency item.price %></strong></td>
+  <td class="text-center"><strong><%= number_to_currency item.total_price_in_cart  %></strong></td>
+  <td class="">
+    <%= submit_tag t("carts.update_button"), class: "btn btn-warning" %>
+  </td>
+  <% end %>
+  <td class="">
+    <%= link_to cart_path(item, product_id: item.id), method: :delete, data: {confirm: t("you_sure")},
+      type: "button", class: "btn btn-danger" do %>
+        <span class="glyphicon glyphicon-trash"></span>
+        <%= t "carts.remove_button"%>
+    <% end %>
+  </td>
+</tr>

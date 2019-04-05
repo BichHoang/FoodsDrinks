@@ -1,0 +1,61 @@
+<header class="header-area">
+    <div class="container">
+        <div class="header-wrap">
+            <div class="header-top d-flex justify-content-between align-items-center navbar-expand-md">
+                <div class="col menu-left">
+                    <%= link_to "HOME", root_path %>
+                    <%= link_to "ALL", products_path %>
+                    <%= link_to "FOOD", products_path(category_id: 1)%>
+                    <%= link_to "DRINK", products_path(category_id: 2) %>
+                </div>
+                <div class="col-3 logo">
+                    <%= link_to image_tag("LOGO.png"), root_path, class: "mx-auto", alt: "" %>
+                </div>
+                <nav class="col navbar navbar-expand-md justify-content-end">
+
+                    <!-- Toggler/collapsibe Button -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="lnr lnr-menu"></span>
+                    </button>
+
+                    <!-- Navbar links -->
+                    <div class="collapse navbar-collapse menu-right" id="collapsibleNavbar">
+                        <ul class="navbar-nav justify-content-center w-100">
+                            <!-- Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                    Pages
+                                </a>
+                                <div class="dropdown-menu">
+                                    <%= link_to "Help", help_path, class: "dropdown-item" %>
+                                    <%= link_to "About", about_path, class: "dropdown-item" %>
+                                    <%= link_to "Contact", contact_path, class: "dropdown-item" %>
+                                </div>
+                            </li>
+                            
+                            <% if logged_in? %>
+                                <% if admin? %>                                
+                                    <%= render "layouts/admin" %>
+                                <% else %>
+                                    <%= render "layouts/user" %>
+                                <% end %>
+                            <% else %>
+                                <li class="nav-item">
+                                    <%= link_to login_path, class: "nav-link" do%>
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    <%= t "login_link" %>
+                                    <% end %>
+                                </li>
+                            <% end %>
+                            <li class="nav-item">
+                                <%= link_to carts_path, class: "btn btn-default btn-color" do %>
+                                    <%= render "layouts/cart_icon" %>
+                                <% end %>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

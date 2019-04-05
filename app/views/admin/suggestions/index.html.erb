@@ -1,0 +1,17 @@
+<%= provide :title, t(".title") %>
+<div class="container">
+  <h1 class="text-center" style="margin: 10px"><%= t ".header" %></h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th><%= t ".user_name_text" %></th>
+          <th><%= t ".product_name_text" %></th>
+          <th><%= t ".status_text" %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @suggestions %>
+      </tbody>
+    </table>
+</div>

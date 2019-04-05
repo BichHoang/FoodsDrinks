@@ -1,0 +1,38 @@
+<%= provide :title, t(".title") %>
+<div class="container" style="margin-top: 10px">
+  <h1 class="text-center"><%= t ".header" %></h1>
+    <div class="well">
+      <table class="table">
+        <thead>
+          <tr>
+            <th width=40%><%= t ".product_name_text" %></th>
+            <th width=10% class="text-center"><%= t ".quantity_text" %></th>
+            <th width=20% class="text-center"><%= t ".unit_price_text" %></th>
+            <th width=10% class="text-center"><%= t ".total_text" %></th>
+            <th width=20% colspan=2 class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "item", collection: @products_of_current_cart %>
+          <tr>
+            <td colspan=4 class="text-right"><h3><%= t ".total_text" %></h3></td>
+            <td colspan=2 class="text-right"><h3><strong><%= number_to_currency @total %></strong></h3></td>
+          </tr>
+          <tr>
+            <td colspan=3></td>
+            <td>
+            <%= link_to products_path, type: "button", class: "btn btn-info" do %>
+              <span class="fas fa-shopping-cart"></span>
+              <%= t ".continue_shopping_txt" %>
+            <% end %>
+            </td>
+            <td>
+            <%= link_to new_order_path, type: "button", class: "btn btn-success", style:"width: 200%;" do %>
+              <%= t ".checkout_txt" %>
+              <span class="fas fa-play"></span>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

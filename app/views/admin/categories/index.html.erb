@@ -1,0 +1,29 @@
+<%= provide :title, "All Categories" %>
+<h1 class="text-center" style="margin: 10px">All Categories</h1>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "categories.name_lb" %></th>
+        <th><%= t "categories.parent_lb" %></th>
+        <th><%= t "categories.products_lb" %></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "category", collection: @categories %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <%= link_to t("categories.new_category_link"), new_admin_category_path,
+            class: "btn btn-success pull-right" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
